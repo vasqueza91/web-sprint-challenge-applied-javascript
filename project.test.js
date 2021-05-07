@@ -101,3 +101,4 @@ describe('TASK 6 - cardAppender', () => {
     }
   })
 })
+debugger
