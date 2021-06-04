@@ -60,57 +60,53 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-  // const arr = ["javascript", "bootstrap", "technology", "jquery", "node"];
   
+  
+  // selector = document.querySelector('.cards-container')
+
   axios
   .get('https://lambda-times-api.herokuapp.com/articles')
   .then((res) => {
     console.log(res)
-    selector = document.querySelector('.cards-container')
     const javascript = res.data.articles.javascript
     console.log(javascript)
-    javascript.forEach(obj => {
-      const javaCard = Card(obj)
-      selector.appendChild(javaCard)
+    javascript.forEach(article => {
+      const javaCard = Card(article)
+      document.querySelector(selector).appendChild(javaCard)
     })
     const bootstrap = res.data.articles.bootstrap
-    bootstrap.forEach(obj => {
-      const bootCard = Card(obj)
-      selector.appendChild(bootCard)
+    bootstrap.forEach(article => {
+      const bootCard = Card(article)
+      document.querySelector(selector).appendChild(bootCard)
     })
     const technology = res.data.articles.technology
-    technology.forEach(obj => {
-      const techCard = Card(obj)
-      selector.appendChild(techCard)
+    technology.forEach(article => {
+      const techCard = Card(article)
+      document.querySelector(selector).appendChild(techCard)
     })
     const jquery = res.data.articles.jquery
-    jquery.forEach(obj => {
-      const jQueryCard = Card(obj)
-      selector.appendChild(jQueryCard)
+    jquery.forEach(article => {
+      const jQueryCard = Card(article)
+      document.querySelector(selector).appendChild(jQueryCard)
     })
     const node = res.data.articles.node
-    node.forEach(obj => {
-      const nodeCard = Card(obj)
-      selector.appendChild(nodeCard)
-    })
-    
-    // javascript
-    // selector.appendChild(javascript)
-    // const art = res.data.articles
-    // console.log(art);
-    // const { 'javascript' }
-    
-    // arr.forEach(topic => {
-    //   res.data.articles[topic].forEach(el =>{
-    //     const newDiv = Card(el);
-    //     document.querySelector(selector).appendChild(newDiv);
-    //   });
-    // });
+    node.forEach(article => {
+      const nodeCard = Card(article)
+      document.querySelector(selector).appendChild(nodeCard)
+    }) 
   })
   .catch((err) => {
     console.log(err);
   });
 }
+
+// const arr = ["javascript", "bootstrap", "technology", "jquery", "node"];
+// arr.forEach(topic => {
+    //   res.data.articles[topic].forEach(el =>{
+    //     const newDiv = Card(el);
+    //     document.querySelector(selector).appendChild(newDiv);
+    //   });
+    // });
 
   // selector = document.querySelector('.cards-container')
 
@@ -118,22 +114,7 @@ const cardAppender = (selector) => {
   // .get('https://lambda-times-api.herokuapp.com/articles')
   // .then((res) => {
   //   console.log(res);
-  //   // Array.forEach((topic) => {
-  //   //   const articles = res.data.articles.forEach
-  //   // })
-  //   const obj = res.data.articles
-  //   Object.keys(obj).forEach(key => {
-  //     console.log(key, obj[key])
-  //     key.forEach()
-      // console.log(key)
-      // javaScript = val[0]
-      // console.log(javaScript)
-    // })
     // const article = res.data.articles;
-    // article.forEach(({}) => {
-    //   const articleCard = Card({ authorName, authorPhoto, headline })
-    //   selector.appendChildren(articleCard)
-    // })
     // const javaScript = articles.javascript;
     // const bootStrap = articles.bootstrap;
     // const technology = articles.technology;
