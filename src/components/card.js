@@ -61,57 +61,109 @@ const cardAppender = (selector) => {
   //
 
   // const arr = ["javascript", "bootstrap", "technology", "jquery", "node"];
+  
+  axios
+  .get('https://lambda-times-api.herokuapp.com/articles')
+  .then((res) => {
+    console.log(res)
+    selector = document.querySelector('.cards-container')
+    const javascript = res.data.articles.javascript
+    console.log(javascript)
+    javascript.forEach(obj => {
+      const javaCard = Card(obj)
+      selector.appendChild(javaCard)
+    })
+    const bootstrap = res.data.articles.bootstrap
+    bootstrap.forEach(obj => {
+      const bootCard = Card(obj)
+      selector.appendChild(bootCard)
+    })
+    const technology = res.data.articles.technology
+    technology.forEach(obj => {
+      const techCard = Card(obj)
+      selector.appendChild(techCard)
+    })
+    const jquery = res.data.articles.jquery
+    jquery.forEach(obj => {
+      const jQueryCard = Card(obj)
+      selector.appendChild(jQueryCard)
+    })
+    const node = res.data.articles.node
+    node.forEach(obj => {
+      const nodeCard = Card(obj)
+      selector.appendChild(nodeCard)
+    })
+    
+    // javascript
+    // selector.appendChild(javascript)
+    // const art = res.data.articles
+    // console.log(art);
+    // const { 'javascript' }
+    
+    // arr.forEach(topic => {
+    //   res.data.articles[topic].forEach(el =>{
+    //     const newDiv = Card(el);
+    //     document.querySelector(selector).appendChild(newDiv);
+    //   });
+    // });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+}
+
+  // selector = document.querySelector('.cards-container')
+
   // axios
   // .get('https://lambda-times-api.herokuapp.com/articles')
   // .then((res) => {
   //   console.log(res);
-  //   arr.forEach(topic => {
-  //     res.data.articles[topic].forEach(el =>{
-  //       const newDiv = Card(el);
-  //       document.querySelector(selector).appendChild(newDiv);
-  //     });
-  //   });
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
+  //   // Array.forEach((topic) => {
+  //   //   const articles = res.data.articles.forEach
+  //   // })
+  //   const obj = res.data.articles
+  //   Object.keys(obj).forEach(key => {
+  //     console.log(key, obj[key])
+  //     key.forEach()
+      // console.log(key)
+      // javaScript = val[0]
+      // console.log(javaScript)
+    // })
+    // const article = res.data.articles;
+    // article.forEach(({}) => {
+    //   const articleCard = Card({ authorName, authorPhoto, headline })
+    //   selector.appendChildren(articleCard)
+    // })
+    // const javaScript = articles.javascript;
+    // const bootStrap = articles.bootstrap;
+    // const technology = articles.technology;
+    // const jQuery = articles.jquery;
+    // const nodeJs = articles.node;
+    // console.log(articles)
 
-  selector = document.querySelector('.cards-container')
-
-  axios
-  .get('https://lambda-times-api.herokuapp.com/articles')
-  .then((res) => {
-    console.log(res);
-    const articles = res.data.articles;
-    const javaScript = articles.javascript;
-    const bootStrap = articles.bootstrap;
-    const technology = articles.technology;
-    const jQuery = articles.jquery;
-    const nodeJs = articles.node;
-    console.log(articles)
-
-    selector.appendChild(Card(javaScript[0]));
-    selector.appendChild(Card(javaScript[1]));
-    selector.appendChild(Card(javaScript[2]));
-    selector.appendChild(Card(javaScript[3]));
-    selector.appendChild(Card(bootStrap[0]));
-    selector.appendChild(Card(bootStrap[1]));
-    selector.appendChild(Card(bootStrap[2]));
-    selector.appendChild(Card(technology[0]));
-    selector.appendChild(Card(technology[1]));
-    selector.appendChild(Card(technology[2]));
-    selector.appendChild(Card(jQuery[0]));
-    selector.appendChild(Card(jQuery[1]));
-    selector.appendChild(Card(jQuery[2]));
-    selector.appendChild(Card(nodeJs[0]));
-    selector.appendChild(Card(nodeJs[1]));
-  })
-  .catch(err => {
-    console.log(err)
-  })
-  .finally(() => {
-    console.log("Finsihed")
-  })
-}
+    
+    // selector.appendChild(Card(javaScript[0]));
+    // selector.appendChild(Card(javaScript[1]));
+    // selector.appendChild(Card(javaScript[2]));
+    // selector.appendChild(Card(javaScript[3]));
+    // selector.appendChild(Card(bootStrap[0]));
+    // selector.appendChild(Card(bootStrap[1]));
+    // selector.appendChild(Card(bootStrap[2]));
+    // selector.appendChild(Card(technology[0]));
+    // selector.appendChild(Card(technology[1]));
+    // selector.appendChild(Card(technology[2]));
+    // selector.appendChild(Card(jQuery[0]));
+    // selector.appendChild(Card(jQuery[1]));
+    // selector.appendChild(Card(jQuery[2]));
+    // selector.appendChild(Card(nodeJs[0]));
+    // selector.appendChild(Card(nodeJs[1]));
+//   })
+//   .catch(err => {
+//     console.log(err)
+//   })
+//   .finally(() => {
+//     console.log("Finsihed")
+//   })
+// }
 
 export { Card, cardAppender }
