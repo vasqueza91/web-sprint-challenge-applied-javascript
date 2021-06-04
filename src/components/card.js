@@ -90,21 +90,21 @@ const cardAppender = (selector) => {
     const nodeJs = articles.node;
     console.log(articles)
 
-    selector.append(Card(javaScript[0]));
-    selector.append(Card(javaScript[1]));
-    selector.append(Card(javaScript[2]));
-    selector.append(Card(javaScript[3]));
-    selector.append(Card(bootStrap[0]));
-    selector.append(Card(bootStrap[1]));
-    selector.append(Card(bootStrap[2]));
-    selector.append(Card(technology[0]));
-    selector.append(Card(technology[1]));
-    selector.append(Card(technology[2]));
-    selector.append(Card(jQuery[0]));
-    selector.append(Card(jQuery[1]));
-    selector.append(Card(jQuery[2]));
-    selector.append(Card(nodeJs[0]));
-    selector.append(Card(nodeJs[1]));
+    selector.appendChild(Card(javaScript[0]));
+    selector.appendChild(Card(javaScript[1]));
+    selector.appendChild(Card(javaScript[2]));
+    selector.appendChild(Card(javaScript[3]));
+    selector.appendChild(Card(bootStrap[0]));
+    selector.appendChild(Card(bootStrap[1]));
+    selector.appendChild(Card(bootStrap[2]));
+    selector.appendChild(Card(technology[0]));
+    selector.appendChild(Card(technology[1]));
+    selector.appendChild(Card(technology[2]));
+    selector.appendChild(Card(jQuery[0]));
+    selector.appendChild(Card(jQuery[1]));
+    selector.appendChild(Card(jQuery[2]));
+    selector.appendChild(Card(nodeJs[0]));
+    selector.appendChild(Card(nodeJs[1]));
   })
   .catch(err => {
     console.log(err)
