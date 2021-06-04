@@ -13,21 +13,21 @@ const Header = (title, date, temp) => {
   //
 
   const header = document.createElement('div');
-  const hDate = document.createElement('span');
-  const hTitle = document.createElement('h1');
-  const hTemp = document.createElement('span');
+  const headerDate = document.createElement('span');
+  const headerTitle = document.createElement('h1');
+  const headerTemperature = document.createElement('span');
 
-  hDate.textContent = date;
-  hTitle.textContent = title;
-  hTemp.textContent = temp;
+  headerDate.textContent = date;
+  headerTitle.textContent = title;
+  headerTemperature.textContent = temp;
 
-  header.appendChild(hDate);
-  header.appendChild(hTitle);
-  header.appendChild(hTemp);
+  header.appendChild(headerDate);
+  header.appendChild(headerTitle);
+  header.appendChild(headerTemperature);
 
   header.classList.add('header');
-  hDate.classList.add('date');
-  hTemp.classList.add('temp');
+  headerDate.classList.add('date');
+  headerTemperature.classList.add('temp');
 
   return header;
 }
@@ -40,8 +40,8 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
-  const tTwo = document.querySelector(selector);
-  tTwo.append(Header('Lambda Daily', 'July 4, 1991', '67 degrees'));
+  const newHeader = document.querySelector(selector);
+  newHeader.append(Header('Lambda Daily', 'July 4, 1991', '67 degrees'));
   
 }
 

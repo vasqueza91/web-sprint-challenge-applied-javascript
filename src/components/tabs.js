@@ -16,17 +16,17 @@ const Tabs = (topics) => {
   // </div>
   //
 
-  const tContain = document.createElement('div');
-  tContain.classList.add('topics');
+  const container = document.createElement('div');
+  container.classList.add('topics');
 
   topics.forEach(topic => {
-    const tops = document.createElement('div');
-    tops.classList.add('tops');
-    tops.textContent = topic;
-    tContain.appendChild(tops);
+    const tabs = document.createElement('div');
+    tabs.classList.add('tab');
+    tabs.textContent = topic;
+    container.appendChild(tabs);
   });
 
-  return tContain;
+  return container;
 }
 
 const tabsAppender = (selector) => {
@@ -48,6 +48,9 @@ const tabsAppender = (selector) => {
   })
   .catch(err => {
     console.log(err);
+  })
+  .finally(() => {
+    console.log("Done")
   })
 }
 
